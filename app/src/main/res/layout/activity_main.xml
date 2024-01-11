@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="200">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="20"
+            android:text="@string/screen_name"
+            android:gravity="center"
+            android:textSize="30sp"/>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="80dp"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="90">
+
+            <Button
+                android:id="@+id/challengeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="@string/challenge"
+                android:textSize="15sp" />
+            <Button
+                android:id="@+id/multiTo20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="@string/multi_to_20"
+                android:textSize="15sp"/>
+            <Button
+                android:id="@+id/multiBoard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="@string/multi_board"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="540dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/firstNum"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:text="@string/first_num"
+                android:background="@color/teal_200"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:textSize="50sp"
+                android:text="@string/multi_sign"
+                android:background="@color/teal_200"/>
+
+            <TextView
+                android:id="@+id/secondNum"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:text="@string/second_num"
+                android:background="@color/teal_200"/>
+
+            <EditText
+                android:id="@+id/answerBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:text="@string/answer"
+                android:inputType="number"
+                android:textColor="@color/gray"
+                android:background="@color/teal_200"/>
+
+            <Button
+                android:id="@+id/checkButton"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:text="@string/check"
+                android:textSize="20sp"
+                android:background="@color/purple_700"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

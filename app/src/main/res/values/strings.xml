@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Amishav</string>
+    <string name="screen_name">Math Exercises</string>
+    <string name="multi_board">לוח הכפל</string>
+    <string name="multi_to_20">כפל עד 20</string>
+    <string name="challenge">אתגר</string>
+    <string name="multi_sign">X</string>
+    <string name="answer">תשובה</string>
+    <string name="check">בדיקה</string>
+    <string name="first_num"> </string>
+    <string name="second_num"> </string>
+</resources>
