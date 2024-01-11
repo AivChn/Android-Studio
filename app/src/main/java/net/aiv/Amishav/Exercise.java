@@ -2,15 +2,13 @@ package net.aiv.Amishav;
 
 import java.util.Random;
 
-public class Excercise {
+public class Exercise {
 
     private Random ran;
     private int firstNum;
     private int secondNum;
 
-    public Excercise(){
-        updateFirstNum();
-        secondNum = 0;
+    public Exercise(){
         ran = new Random();
     }
 
