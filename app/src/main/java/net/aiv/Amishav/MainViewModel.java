@@ -3,11 +3,15 @@ package net.aiv.Amishav;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainViewModel extends ViewModel {
 
     private Exercise exercise;
     private MutableLiveData<Integer> firstNum;
     private MutableLiveData<Integer> secondNum;
+
 
     public MainViewModel() {
 
@@ -15,6 +19,10 @@ public class MainViewModel extends ViewModel {
         firstNum = new MutableLiveData<>();
         secondNum = new MutableLiveData<>();
 
+    }
+
+    public void addUser(String username){
+        exercise.addUser(username);
     }
 
     public void exerciseChallenge() {

@@ -9,4 +9,7 @@
     <string name="check">בדיקה</string>
     <string name="first_num"> </string>
     <string name="second_num"> </string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="base_greeting">Hello,</string>
 </resources>
