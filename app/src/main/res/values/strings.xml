@@ -12,4 +12,6 @@
     <string name="username">Username</string>
     <string name="login">Login</string>
     <string name="base_greeting">Hello,</string>
+    <string name="rate">0</string>
+    <string name="rate_text">rate</string>
 </resources>

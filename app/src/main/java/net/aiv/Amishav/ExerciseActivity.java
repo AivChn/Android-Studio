@@ -1,10 +1,15 @@
 package net.aiv.Amishav;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +21,9 @@ import android.widget.Toast;
 public class ExerciseActivity extends AppCompatActivity {
 
     private TextView greeting;
+
+    private Button rateButton;
+    private TextView rateDisplay;
 
     private Button multiBoard;
     private Button multiTo20;
@@ -33,6 +41,9 @@ public class ExerciseActivity extends AppCompatActivity {
 
         greeting = findViewById(R.id.greeting);
 
+        rateButton = findViewById(R.id.exercise_rate_button);
+        rateDisplay = findViewById(R.id.rate_display);
+
         multiBoard = findViewById(R.id.multiBoard);
         multiTo20 = findViewById(R.id.multiTo20);
         challenge = findViewById(R.id.challengeButton);
@@ -49,6 +60,42 @@ public class ExerciseActivity extends AppCompatActivity {
         String username = intent.getStringExtra("username");
         String greetingStr = "Hello, " + username;
         greeting.setText(greetingStr);
+
+        rateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent callingIntent = new Intent(ExerciseActivity.this, RateActivity.class);
+
+                ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+
+                        new ActivityResultContracts.StartActivityForResult(),
+                        new ActivityResultCallback<ActivityResult>() {
+                            @Override
+                            public void onActivityResult(ActivityResult o) {
+
+                                if (o.getResultCode() == Activity.RESULT_OK) {
+
+                                    int rate = o.getData().getIntExtra("rate", 0);
+
+                                    rateDisplay.setText(String.valueOf(rate));
+                                    Toast.makeText(ExerciseActivity.this,
+                                            "You rated " + String.valueOf(rate),
+                                            Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    Toast.makeText(ExerciseActivity.this,
+                                            "Unknown error",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        }
+
+                );
+
+            }
+        });
 
         multiBoard.setOnClickListener(new View.OnClickListener() {
             @Override
