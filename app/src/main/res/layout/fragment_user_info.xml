@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UserInfo">
+
+    <LinearLayout
+        android:id="@+id/profile_picture_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/placeholder_profile"
+            android:layout_gravity="center"
+            android:contentDescription="@string/profile_picture"
+            android:paddingTop="30dp" />
+
+        <Button
+            android:id="@+id/change_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/change_picture" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/username_score_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:paddingBottom="200dp"
+        android:layout_gravity="center">
+
+        <EditText
+            android:id="@+id/frag_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:text="@string/_0"
+            android:textSize="30sp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_user_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="@string/add_user" />
+</FrameLayout>
